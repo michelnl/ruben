@@ -29,6 +29,38 @@ angular.module('angularMaterialAdmin', ['ngAnimate', 'ngCookies', 'ngTouch',
           title: 'Projects'
         }
       })
+      .state('home.content', {
+        url: '/content',
+        templateUrl: 'src/app/modules/content/content.html',
+        controller: 'ContentController',
+        data: {
+          title: 'Content'
+        }
+      })
+      .state('home.leerbomen', {
+        url: '/leerbomen',
+        templateUrl: 'src/app/modules/leerbomen/leerbomen.html',
+        controller: 'LeerbomenController',
+        data: {
+          title: 'Leerbomen'
+        }
+      })
+      .state('home.leerdoelen', {
+        url: '/leerdoelen',
+        templateUrl: 'src/app/modules/leerdoelen/leerdoelen.html',
+        controller: 'LeerdoelenController',
+        data: {
+          title: 'Leerdoelen'
+        }
+      })
+      .state('home.leerlingen', {
+        url: '/leerlingen',
+        templateUrl: 'src/app/modules/leerlingen/leerlingen.html',
+        controller: 'LeerlingenController',
+        data: {
+          title: 'Leerlingen'
+        }
+      })
       .state('home.dashboard', {
         url: '/dashboard',
         templateUrl: 'src/app/views/dashboard.html',

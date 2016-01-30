@@ -20,9 +20,34 @@
         sref: '.profile'
       },
       {
+        name: 'Leerdoelen',
+        icon: 'school',
+        sref: 'home.leerdoelen'
+      },
+      //{
+      //  name: 'Leerbomen',
+      //  icon: 'share',
+      //  sref: 'home.leerlingen'
+      //},
+      {
         name: 'Projects',
         icon: 'view_module',
         sref: 'home.projects'
+      },
+      {
+        name: 'Leerbomen',
+        icon: 'nature',
+        sref: 'home.leerbomen'
+      },
+      {
+        name: 'Content',
+        icon: 'movie_creation',
+        sref: 'home.content'
+      },
+      {
+        name: 'Leerlingen',
+        icon: 'people',
+        sref: 'home.leerlingen'
       }
     ];
 

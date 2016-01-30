@@ -1,15 +1,36 @@
-<div layout="row"  layout-xs="column">
-    <section layout-margin class="md-whiteframe-z1 panel-widget" ng-repeat="project in projects" layout="column">
-        <md-toolbar md-theme="custom" class="md-hue-1 panel-widget-toolbar">
-            <div class="md-toolbar-tools">
-                <h3 class="panel-widget-tittle">{{project.title}}</h3>
-                <span flex></span>
-                <md-button ng-show="options" ng-click="$showOptions = !$showOptions" class="md-icon-button" aria-label="Show options">
-                    <i class="material-icons">more_vert</i>
-                </md-button>
-                {{project.description}}
-            </div>
-        </md-toolbar>
-    </section>
+<div ng-repeat="project in projects" ng-if="$index % 3 == 0" layout="row">
+    <md-card flex="30">
+        <md-card-header>
+            <md-card-title><h3 style="margin: 10px;">{{projects[$index].name}}</h3></md-card-title>
+        </md-card-header>
+        <div style="width: 100%; background-color: #03A9F4; height: 75px; text-align: center;">
+            <i class="material-icons md-48" style="color: white; height: 50px; margin: 10px;">archive</i>
+        </div>
+        <md-card-content>
+            {{projects[$index].description}}
+        </md-card-content>
+    </md-card>
+    <md-card flex="30" ng-if="projects[$index + 1]">
+        <md-card-header>
+            <md-card-title><h3 style="margin: 10px;">{{projects[$index + 1].name}}</h3></md-card-title>
+        </md-card-header>
+        <div style="width: 100%; background-color: #03A9F4; height: 75px; text-align: center;">
+            <i class="material-icons md-48" style="color: white; height: 50px; margin: 10px;">archive</i>
+        </div>
+        <md-card-content>
+            {{projects[$index + 1].description}}
+        </md-card-content>
+    </md-card>
+    <md-card flex="30" ng-if="projects[$index + 2]">
+        <md-card-header>
+            <md-card-title><h3 style="margin: 10px;">{{projects[$index + 2].name}}</h3></md-card-title>
+        </md-card-header>
+        <div style="width: 100%; background-color: #03A9F4; height: 75px; text-align: center;">
+            <i class="material-icons md-48" style="color: white; height: 50px; margin: 10px;">archive</i>
+        </div>
+        <md-card-content>
+            {{projects[$index + 2].description}}
+        </md-card-content>
+    </md-card>
 </div>
 

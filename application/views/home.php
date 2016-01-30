@@ -2,7 +2,7 @@
 <html class="no-js" ng-app="angularMaterialAdmin">
 <head>
     <meta charset="utf-8">
-    <title>Angular Material Dashboard</title>
+    <title>Ruben.edu</title>
     <meta name="description" content="Angular admin dashboard with material design">
     <meta name="author" content="flatlogic.com">
     <meta name="viewport" content="width=device-width">
@@ -72,6 +72,10 @@
 <script src="src/app/controllers/MainController.js"></script>
 <script src="src/app/modules/login/LoginController.js"></script>
 <script src="src/app/modules/projects/ProjectsController.js"></script>
+<script src="src/app/modules/content/contentController.js"></script>
+<script src="src/app/modules/leerbomen/leerbomenController.js"></script>
+<script src="src/app/modules/leerdoelen/leerdoelenController.js"></script>
+<script src="src/app/modules/leerlingen/leerlingenController.js"></script>
 <script src="src/app/index.js"></script>
 <!-- endinject -->
 
