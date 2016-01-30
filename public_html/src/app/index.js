@@ -13,6 +13,22 @@ angular.module('angularMaterialAdmin', ['ngAnimate', 'ngCookies', 'ngTouch',
         controllerAs: 'vm',
         abstract: true
       })
+      .state('home.login', {
+        url: '/login',
+        templateUrl: 'src/app/modules/login/login.html',
+        controller: 'LoginController',
+        data: {
+          title: 'Login'
+        }
+      })
+      .state('home.projects', {
+        url: '/projects',
+        templateUrl: 'src/app/modules/projects/projects.html',
+        controller: 'ProjectsController',
+        data: {
+          title: 'Projects'
+        }
+      })
       .state('home.dashboard', {
         url: '/dashboard',
         templateUrl: 'src/app/views/dashboard.html',
@@ -39,7 +55,7 @@ angular.module('angularMaterialAdmin', ['ngAnimate', 'ngCookies', 'ngTouch',
         }
       });
 
-    $urlRouterProvider.otherwise('/dashboard');
+    $urlRouterProvider.otherwise('/login');
 
     $mdThemingProvider
       .theme('default')

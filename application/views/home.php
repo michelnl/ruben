@@ -70,7 +70,8 @@
 <script src="src/app/controllers/MessagesController.js"></script>
 <script src="src/app/controllers/MemoryController.js"></script>
 <script src="src/app/controllers/MainController.js"></script>
-<script src="src/app/controllers/ControlPanelController.js"></script>
+<script src="src/app/modules/login/LoginController.js"></script>
+<script src="src/app/modules/projects/ProjectsController.js"></script>
 <script src="src/app/index.js"></script>
 <!-- endinject -->
 

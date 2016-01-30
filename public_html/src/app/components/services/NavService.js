@@ -20,9 +20,9 @@
         sref: '.profile'
       },
       {
-        name: 'Table',
+        name: 'Projects',
         icon: 'view_module',
-        sref: '.table'
+        sref: 'home.projects'
       }
     ];
 
