@@ -39,7 +39,7 @@
     function selectItem (item) {
       vm.title = item.name;
       vm.toggleItemsList();
-      vm.showSimpleToast(vm.title);
+      // vm.showSimpleToast(vm.title);
     }
 
     function showActions($event) {

@@ -1,3 +1,11 @@
+<div layout="row">
+    <div flex>
+        <h1>Projecten</h1>
+    </div>
+    <div flex>
+        <md-button class="md-raised md-primary" ng-click="newProject()">Nieuw project</md-button>
+    </div>
+</div>
 <div ng-repeat="project in projects" ng-if="$index % 3 == 0" layout="row">
     <md-card flex="30">
         <md-card-header>
@@ -9,6 +17,10 @@
         <md-card-content>
             {{projects[$index].description}}
         </md-card-content>
+        <md-card-actions layout="row" layout-align="end center">
+            <md-button ng-click="bewerkProject(projects[$index])">Bewerken</md-button>
+            <md-button ng-click="verwijderProject(projects[$index])">Verwijderen</md-button>
+        </md-card-actions>
     </md-card>
     <md-card flex="30" ng-if="projects[$index + 1]">
         <md-card-header>
@@ -20,6 +32,10 @@
         <md-card-content>
             {{projects[$index + 1].description}}
         </md-card-content>
+        <md-card-actions layout="row" layout-align="end center">
+            <md-button ng-click="bewerkProject(projects[$index + 1])">Bewerken</md-button>
+            <md-button ng-click="verwijderProject(projects[$index + 1])">Verwijderen</md-button>
+        </md-card-actions>
     </md-card>
     <md-card flex="30" ng-if="projects[$index + 2]">
         <md-card-header>
@@ -31,6 +47,11 @@
         <md-card-content>
             {{projects[$index + 2].description}}
         </md-card-content>
+        <md-card-actions layout="row" layout-align="end center">
+            <md-button ng-click="bewerkProject(projects[$index + 2])">Bewerken</md-button>
+            <md-button ng-click="verwijderProject(projects[$index + 2])">Verwijderen</md-button>
+        </md-card-actions>
     </md-card>
 </div>
+
 

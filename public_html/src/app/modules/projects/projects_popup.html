@@ -1,0 +1,56 @@
+<form name="projectForm" ng-submit="submitForm(projectForm.$valid)" novalidate>
+    <md-dialog aria-label="Mango (Fruit)"  ng-cloak>
+        <form>
+            <md-toolbar>
+                <div class="md-toolbar-tools">
+                    <h2 ng-if="project.id">Bijwerken: {{project.name}}</h2>
+                    <h2 ng-if="!project.id">Nieuw project</h2>
+                    <span flex></span>
+                    <md-button class="md-icon-button" ng-click="cancel()">
+                        <i class="material-icons md24">clear</i>
+                    </md-button>
+                </div>
+            </md-toolbar>
+
+            <md-dialog-content style="width: 600px;">
+                <div class="md-dialog-content">
+                    <md-input-container class="md-block">
+                        <label>Naam</label>
+                        <input ng-model="project.name">
+                    </md-input-container>
+                    <md-input-container class="md-block">
+                        <label>Omschrijving</label>
+                        <textarea ng-model="project.description" columns="1" md-maxlength="150" rows="5"></textarea>
+                    </md-input-container>
+
+                </div>
+
+                <md-dialog-actions layout="row">
+                    <md-button ng-click="cancel()">
+                        Cancel
+                    </md-button>
+                    <md-button ng-click="create(project)" class="md-raised md-primary" ng-if="!project.id" ng-disabled="projectForm.$invalid">
+                        Aanmaken
+                    </md-button>
+                    <md-button ng-click="update(project)" class="md-raised md-primary" ng-if="project.id" ng-disabled="projectForm.$invalid">
+                        Bijwerken
+                    </md-button>
+                </md-dialog-actions>
+            </md-dialog-content>
+        </form>
+    </md-dialog>
+</form>
+
+<style>
+    .dialogdemoBasicUsage #popupContainer {
+        position: relative; }
+
+    .dialogdemoBasicUsage .footer {
+        width: 100%;
+        text-align: center;
+        margin-left: 20px; }
+
+    .dialogdemoBasicUsage .footer, .dialogdemoBasicUsage .footer > code {
+        font-size: 0.8em;
+        margin-top: 50px; }
+</style>

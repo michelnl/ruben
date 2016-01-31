@@ -1,0 +1,45 @@
+<form name="projectForm" ng-submit="submitForm(projectForm.$valid)" novalidate>
+    <md-dialog aria-label="Mango (Fruit)"  ng-cloak>
+        <form>
+            <md-toolbar>
+                <div class="md-toolbar-tools">
+                    <h2>Verwijderen: {{project.name}}</h2>
+                    <span flex></span>
+                    <md-button class="md-icon-button" ng-click="cancel()">
+                        <i class="material-icons md24">clear</i>
+                    </md-button>
+                </div>
+            </md-toolbar>
+
+            <md-dialog-content style="width: 600px;">
+                <div class="md-dialog-content">
+                    <p>Weet u zeker dat u dit project wilt verwijderen?</p>
+
+                </div>
+
+                <md-dialog-actions layout="row">
+                    <md-button ng-click="cancel()">
+                        Cancel
+                    </md-button>
+                    <md-button ng-click="delete(project)" class="md-raised md-primary" ng-disabled="projectForm.$invalid">
+                        Verwijder
+                    </md-button>
+                </md-dialog-actions>
+            </md-dialog-content>
+        </form>
+    </md-dialog>
+</form>
+
+<style>
+    .dialogdemoBasicUsage #popupContainer {
+        position: relative; }
+
+    .dialogdemoBasicUsage .footer {
+        width: 100%;
+        text-align: center;
+        margin-left: 20px; }
+
+    .dialogdemoBasicUsage .footer, .dialogdemoBasicUsage .footer > code {
+        font-size: 0.8em;
+        margin-top: 50px; }
+</style>
