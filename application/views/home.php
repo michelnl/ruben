@@ -76,6 +76,7 @@
 <script src="src/app/modules/leerbomen/leerbomenController.js"></script>
 <script src="src/app/modules/leerdoelen/leerdoelenController.js"></script>
 <script src="src/app/modules/leerlingen/leerlingenController.js"></script>
+<script src="src/app/modules/projects/ProjectsPopupController.js"></script>
 <script src="src/app/index.js"></script>
 <!-- endinject -->
 

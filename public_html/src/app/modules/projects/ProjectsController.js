@@ -1,4 +1,4 @@
-angular.module('app').controller('ProjectsController', function($http, $scope, $mdDialog, $mdMedia) {
+angular.module('app').controller('ProjectsController', function($http, $scope, $mdDialog, $mdMedia, $rootScope) {
     var vm = this;
 
     loadProjects();
@@ -23,6 +23,7 @@ angular.module('app').controller('ProjectsController', function($http, $scope, $
         console.log(project);
         $mdDialog.cancel();
         addProject(project);
+        //$scope.projects.push(project);
     }
 
     $scope.bewerkProject = function(project) {
@@ -68,36 +69,51 @@ angular.module('app').controller('ProjectsController', function($http, $scope, $
         $http.get("/project")
             .success(function(response) {
                 $scope.projects = response.data;
+                console.log('reload');
             });
     }
 
     var new_project = {id: null, name: null, description: null, created_on: null};
 
-    function openDialog(ev) {
+    function openDialog(ev, project) {
         var useFullScreen = ($mdMedia('sm') || $mdMedia('xs'))  && $scope.customFullscreen;
 
         $mdDialog.show({
-            controller: 'ProjectsController',
+            controller: 'ProjectsPopupController',
             scope: $scope.$new(),
             templateUrl: 'src/app/modules/projects/projects_popup.html',
             parent: angular.element(document.body),
             targetEvent: ev,
             clickOutsideToClose:true,
-            fullscreen: useFullScreen
+            fullscreen: useFullScreen,
+            locals: {
+                reload: function() {
+                    return vm.reload();
+                }
+            }
         })
     }
+
+    vm.reload = function() {
+        loadProjects();
+    };
 
     function openDialogConfirm(ev) {
         var useFullScreen = ($mdMedia('sm') || $mdMedia('xs'))  && $scope.customFullscreen;
 
         $mdDialog.show({
-            controller: 'ProjectsController',
+            controller: 'ProjectsPopupController',
             scope: $scope.$new(),
             templateUrl: 'src/app/modules/projects/projects_popup_confirm.html',
             parent: angular.element(document.body),
             targetEvent: ev,
             clickOutsideToClose:true,
-            fullscreen: useFullScreen
+            fullscreen: useFullScreen,
+            locals: {
+                reload: function() {
+                    return vm.reload();
+                }
+            }
         })
     }
 });
