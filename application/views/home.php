@@ -19,6 +19,7 @@
     <!-- build:css({.tmp/serve,src}) styles/app.css -->
     <!-- inject:css -->
     <link rel="stylesheet" href="src/app/index.css">
+    <link rel="stylesheet" href="src/app/vis.css">
     <!-- endinject -->
     <!-- endbuild -->
 </head>
@@ -77,6 +78,8 @@
 <script src="src/app/modules/leerdoelen/leerdoelenController.js"></script>
 <script src="src/app/modules/leerlingen/leerlingenController.js"></script>
 <script src="src/app/modules/projects/ProjectsPopupController.js"></script>
+<script src="src/app/modules/leerbomen/LeerboomPopupController.js"></script>
+<script src="src/app/vis.js"></script>
 <script src="src/app/index.js"></script>
 <!-- endinject -->
 

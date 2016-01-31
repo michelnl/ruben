@@ -1,0 +1,96 @@
+<form name="projectForm" ng-submit="submitForm(projectForm.$valid)" novalidate>
+    <md-dialog aria-label="Mango (Fruit)"  ng-cloak>
+        <form>
+            <md-toolbar>
+                <div class="md-toolbar-tools">
+                    <h2>Materiaal selecteren: Richting kracht bepalen</h2>
+                    <span flex></span>
+                    <md-button class="md-icon-button" ng-click="cancel()">
+                        <i class="material-icons md24">clear</i>
+                    </md-button>
+                </div>
+            </md-toolbar>
+
+            <md-dialog-content style="width: 1200px;">
+                <p>Samenstellen krachten</p>
+                <md-tabs md-dynamic-height md-border-bottom>
+                <md-tab label="Uitleg">
+                    <md-content class="md-padding" style="width: 900px;">
+                        <div flex>
+                            <md-checkbox ng-model="data.cb1" aria-label="Checkbox 1">
+                                Malmberg
+                            </md-checkbox>
+                        </div>
+                        <div flex>
+                            <md-checkbox ng-model="data.cb2" aria-label="Checkbox 1">
+                                Noordhoff
+                            </md-checkbox>
+                        </div>
+                        <div flex>
+                            <md-checkbox ng-model="data.cb3" aria-label="Checkbox 1">
+                                ThiemeMeulenhoff
+                            </md-checkbox>
+                        </div>
+                        <div flex>
+                            <md-checkbox ng-model="data.cb4" aria-label="Checkbox 1">
+                                YouTube: <a href="https://www.youtube.com/watch?v=dPJrzzC9YsQ" target="_blank">https://www.youtube.com/watch?v=dPJrzzC9YsQ</a>
+                            </md-checkbox>
+                            <md-checkbox ng-model="data.cb5" aria-label="Checkbox 1">
+                                YouTube: <a href="https://www.youtube.com/watch?v=JWtfhd6dhJw" target="_blank">https://www.youtube.com/watch?v=JWtfhd6dhJw</a>
+                            </md-checkbox>
+                            <md-checkbox ng-model="data.cb6" aria-label="Checkbox 1">
+                                Bron: <a href="http://www.wetenschapsforum.nl/index.php/topic/41633-microcursus-krachten-samenstellen-en-ontbinden/" target="_blank">http://www.wetenschapsforum.nl/index.php/topic/41633-microcursus-krachten-samenstellen-en-ontbinden/</a>
+                            </md-checkbox>
+                            <md-checkbox ng-model="data.cb7" aria-label="Checkbox 1">
+                                PowerPoint: <a href="src/app/powerpoint_krachten_samenstellen.ppt" target="_blank">file</a>
+                            </md-checkbox>
+
+                        </div>
+                    </md-content>
+                </md-tab>
+                <md-tab label="Testen">
+                    <md-content class="md-padding" style="width: 900px;">
+                        <div flex>
+                            <md-checkbox ng-model="data.cc1" aria-label="Checkbox 1">
+                                Malmberg
+                            </md-checkbox>
+                        </div>
+                        <div flex>
+                            <md-checkbox ng-model="data.cc2" aria-label="Checkbox 1">
+                                Noordhoff
+                            </md-checkbox>
+                        </div>
+                        <div flex>
+                            <md-checkbox ng-model="data.cc3" aria-label="Checkbox 1">
+                                ThiemeMeulenhoff
+                            </md-checkbox>
+                        </div>
+                    </md-content>
+                </md-tab>
+                </md-tabs>
+                <md-dialog-actions layout="row">
+                    <md-button ng-click="cancel()">
+                        Cancel
+                    </md-button>
+                    <md-button ng-click="create(project)" class="md-raised md-primary" ng-disabled="projectForm.$invalid">
+                        Opslaan
+                    </md-button>
+                </md-dialog-actions>
+            </md-dialog-content>
+        </form>
+    </md-dialog>
+</form>
+
+<style>
+    .dialogdemoBasicUsage #popupContainer {
+        position: relative; }
+
+    .dialogdemoBasicUsage .footer {
+        width: 100%;
+        text-align: center;
+        margin-left: 20px; }
+
+    .dialogdemoBasicUsage .footer, .dialogdemoBasicUsage .footer > code {
+        font-size: 0.8em;
+        margin-top: 50px; }
+</style>

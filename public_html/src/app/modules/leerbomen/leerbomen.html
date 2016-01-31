@@ -1,1 +1,274 @@
-<h1>Leerbomen</h1>
+<div layout="row">
+    <div flex>
+        <h1>Leerboom</h1>
+    </div>
+</div>
+
+<div layout="row">
+    <a href ng-click="leerdoel()">.</a>
+    <div id="mynetwork" flex></div>
+</div>
+
+<style type="text/css">
+    #mynetwork {
+        width: 900px;
+        height: 600px;
+        border: 1px solid lightgray;
+        background-color: white;
+    }
+</style>
+
+<script type="text/javascript">
+    var nodes = [
+        {id: 1, label: 'Krachten', popuptext: '', title: 'Onderdeel van Domein C1: Kracht & Beweging', value: 1, group: 1, x: 0, y: 168},
+        {id: 2, label: 'Scalar / Vector', popuptext: '', title: 'Ik weet wat het verschil is tussen een scalar en een vector.', value: 1, group: 1, x: 234, y: 168},
+        {id: 3, label: 'Richting kracht bepalen', popuptext: '', title: 'Ik weet hoe ik de richting van een kracht mbv een vector kan bepalen', value: 1, group: 1, x: 455, y: 98},
+        {id: 4, label: 'Grootte kracht bepalen', popuptext: '', title: 'Ik weet hoe ik de grootte van een kracht mbv een vector kan bepalen', value: 1, group: 1, x: 455, y: 238},
+        {id: 5, label: 'Samenstellen krachten', popuptext: '', title: 'Ik weet hoe ik krachten bij elkaar op kan tellen', value: 1, group: 1, x: 585, y: 168},
+        {id: 6, label: 'Ontbinden krachten', popuptext: '', title: 'Ik weet hoe ik krachten kan ontbinden', value: 1, group: 1, x: 715, y: 280},
+        {id: 7, label: 'Soorten kracht', popuptext: '', title: 'Ik weet dat er verschillende krachten zijn', value: 1, group: 2, x: 520, y: 378},
+        {id: 8, label: 'Spierkracht', popuptext: '', title: 'Ik kan voorbeelden van spierkracht noemen en het herkennen', value: 1, group: 2, x: 715, y: 560},
+        {id: 9, label: 'Spankracht', popuptext: '', title: 'Ik kan voorbeelden van spankracht noemen en het herkennen', value: 1, group: 2, x: 845, y: 560},
+        {id: 10, label: 'Veerkracht', popuptext: '', title: 'Ik kan voorbeelden van veerkracht noemen en het herkennen', value: 1, group: 2, x: 975, y: 420},
+        {id: 11, label: 'Fv = Cu', popuptext: '', title: 'Ik kan de formule voor veerkracht gebruiken om een onbekende te berekenen', value: 1, group: 2, x: 1105, y: 420},
+        {id: 12, label: 'Krachten herkennen', popuptext: '', title: 'Ik kan verschillende krachten herkennen en benoemen', value: 1, group: 2, x: 1170, y: 532},
+        {id: 13, label: 'Soorten weerstandskracht', popuptext: '', title: 'Ik weet dat er verschillende woorten weerstandskracht zijn', value: 1, group: 2, x: 780, y: 350},
+        {id: 14, label: 'Luchtweerstand', popuptext: '', title: 'Ik kan uitleggen wat luchtweerstand is', value: 1, group: 2, x: 1040, y: 588},
+        {id: 15, label: 'Fwl = 0,5pCwAv^2', popuptext: '', title: 'Ik kan de formule Fwl = 0,5pCwAv^2 gebruiken', value: 1, group: 2, x: 1105, y: 700},
+        {id: 16, label: 'Normaalkracht', popuptext: '', title: 'Ik kan uitleggen wat normaalkracht is', value: 1, group: 2, x: 780, y: 448},
+        {id: 17, label: 'Schuifweerstand', popuptext: '', title: 'Ik kan uitleggen wat schuifweerstand is', value: 1, group: 2, x: 1105, y: 280},
+        {id: 18, label: 'Fw,s,max = f Fn', popuptext: '', title: 'Ik kan de formule Fwl = 0,5pCwAv^2 gebruiken', value: 1, group: 2, x: 1170, y: 210},
+        {id: 19, label: 'Eerste wet van Newton', popuptext: '', title: 'Ik kan de eerste wet van Newton uitleggen en er een voorbeeld bij geven', value: 1, group: 3, x: 260, y: 0},
+        {id: 20, label: 'Tweede wet van Newton', popuptext: '', title: 'Ik kan de tweede wet van Newton uitleggen en er een voorbeeld bij geven', value: 1, group: 3, x: 780, y: 70},
+        {id: 21, label: 'Derde wet van Newton', popuptext: '', title: 'Ik kan de Derde wet van Newton uitleggen en er een voorbeeld bij geven', value: 1, group: 3, x: 975, y: 28},
+        {id: 23, label: 'Fab = -Fba', popuptext: '', title: 'Ik begrijp de formule Fab = -Fba en kan ermee rekenen', value: 1, group: 3, x: 1170, y: 0},
+        {id: 24, label: 'Traagheid', popuptext: '', title: 'Ik kan uitleggen wat traagheid is en combineren met de eerste wet van Newton', value: 1, group: 3, x: 715, y: 0},
+        {id: 25, label: 'Fres = ma', popuptext: '', title: 'Ik kan uitleggen wat de verschillende variabelen in Fres = ma betekenen en kan ermee rekenen', value: 1, group: 3, x: 585, y: 0},
+        {id: 26, label: 'Zwaartekracht', popuptext: '', title: 'Ik kan uitleggen wat zwaartekracht betekent', value: 1, group: 2, x: 585, y: 490},
+        {id: 27, label: 'Vrije val', popuptext: '', title: 'Ik kan uitleggen wat een vrije val is', value: 1, group: 4, x: 598, y: 630},
+        {id: 28, label: 'Snelheid', popuptext: '', title: 'Onderdeel van Domein C1: Kracht & Beweging', value: 1, group: 4, x: 0, y: 630},
+        {id: 29, label: 'v_g en v', popuptext: '', title: 'Ik weet wat de formules v_g = Δx/Δt en v=dx/dt betekenen en kan ze gebruiken ', value: 1, group: 4, x: 260, y: 560},
+        {id: 30, label: 'v_g uit xt-diagram', popuptext: '', title: 'Ik kan uit een xt-diagram v_g bepalen', value: 1, group: 4, x: 286, y: 728},
+        {id: 31, label: 'v uit xt-diagram', popuptext: '', title: 'Ik kan uit een xt-diagram v bepalen', value: 1, group: 4, x: 455, y: 770},
+        {id: 32, label: 'Eenparige rechtlijnige bewegingen', popuptext: '', title: 'Ik kan uitleggen wat eenparige rechtlijnige bewegingen zijn', value: 1, group: 4, x: 286, y: 672},
+        {id: 33, label: 'Eenparig versnelde/vertraagde bewegingen', popuptext: '', title: 'Ik kan uitleggen wat eenparig versnelde/vertraagde bewegingen zijn', value: 1, group: 4, x: 585, y: 700},
+        {id: 34, label: 'Afgelegde weg uit vt-diagram', popuptext: '', title: 'Ik kan de afgelegede weg bepalen uit een vt-diagram mbv de oppervlakte onder de grafiek', value: 1, group: 4, x: 910, y: 770},
+        {id: 35, label: 's=vt', popuptext: '', title: 'Ik kan de formule s=vt gebruiken in combinatie met een vt-diagram', value: 1, group: 4, x: 1105, y: 770},
+        {id: 36, label: 'a_g en a', popuptext: '', title: 'Ik weet wat de formules a_g = Δv/Δt en a=dv/dt betekenen en kan ze gebruiken ', value: 1, group: 4, x: 780, y: 798},
+        {id: 37, label: 'Fz = mg', popuptext: '', title: 'Ik weet wat de formule Fz = mg betekent en kan hem gebruiken', value: 1, group: 3, x: 975, y: 280},
+        {id: 38, label: 'Gewicht', popuptext: '', title: 'Ik kan het verschil tussen massa en gewicht uitleggen', value: 1, group: 3, x: 845, y: 210},
+    ];
+
+
+
+
+
+
+    // create an array with edges
+    var edges = [
+        {from: 1, to: 2},
+        {from: 1, to: 7},
+        {from: 1, to: 19},
+        {from: 7, to: 26},
+        {from: 2, to: 3},
+        {from: 2, to: 4},
+        {from: 3, to: 4},
+        {from: 3, to: 5},
+        {from: 5, to: 6},
+        {from: 4, to: 5},
+        {from: 7, to: 8},
+        {from: 7, to: 9},
+        {from: 7, to: 10},
+        {from: 7, to: 13},
+        {from: 7, to: 16},
+        {from: 10, to: 11},
+        {from: 8, to: 12},
+        {from: 9, to: 12},
+        {from: 10, to: 12},
+        {from: 16, to: 12},
+        {from: 26, to: 12},
+        {from: 37, to: 12},
+        {from: 13, to: 14},
+        {from: 14, to: 15},
+        {from: 13, to: 37},
+        {from: 13, to: 17},
+        {from: 16, to: 17},
+        {from: 17, to: 18},
+        {from: 26, to: 16},
+        {from: 19, to: 24},
+        {from: 19, to: 25},
+        {from: 19, to: 20},
+        {from: 20, to: 21},
+        {from: 21, to: 23},
+        {from: 26, to: 37},
+        {from: 26, to: 38},
+        {from: 26, to: 27},
+        {from: 37, to: 38},
+        {from: 28, to: 29},
+        {from: 28, to: 30},
+        {from: 28, to: 32},
+        {from: 32, to: 30},
+        {from: 30, to: 31},
+        {from: 32, to: 31},
+        {from: 32, to: 33},
+        {from: 33, to: 40},
+        {from: 33, to: 27},
+        {from: 33, to: 36},
+        {from: 27, to: 34},
+        {from: 34, to: 35},
+        {from: 27, to: 14},
+    ];
+
+    var network;
+    var allNodes;
+    var highlightActive = false;
+
+    var nodesDataset = new vis.DataSet(nodes); // these come from WorldCup2014.js
+    var edgesDataset = new vis.DataSet(edges); // these come from WorldCup2014.js
+
+    function redrawAll() {
+        var container = document.getElementById('mynetwork');
+        var options = {
+            nodes: {
+                shape: 'dot',
+                scaling: {
+                    min: 10,
+                    max: 30,
+                    label: {
+                        min: 8,
+                        max: 30,
+                        drawThreshold: 12,
+                        maxVisible: 20
+                    }
+                },
+                font: {
+                    size: 12,
+                    face: 'Tahoma'
+                }
+            },
+            edges: {
+                width: 0.15,
+                color: {inherit: 'from'},
+                smooth: {
+                    type: 'continuous'
+                }
+            },
+            physics: false,
+            interaction: {
+                tooltipDelay: 200,
+                hideEdgesOnDrag: true
+            }
+        };
+        var data = {nodes:nodesDataset, edges:edgesDataset} // Note: data is coming from ./datasources/WorldCup2014.js
+
+
+        network = new vis.Network(container, data, options);
+
+        // get a JSON object
+        allNodes = nodesDataset.get({returnType:"Object"});
+
+        network.on("click",neighbourhoodHighlight);
+    }
+
+    function neighbourhoodHighlight(params) {
+        // if something is selected:
+        if (params.nodes.length > 0) {
+            highlightActive = true;
+            var i,j;
+            var selectedNode = params.nodes[0];
+            var degrees = 2;
+
+            // mark all nodes as hard to read.
+            for (var nodeId in allNodes) {
+                allNodes[nodeId].color = 'rgba(200,200,200,0.5)';
+                if (allNodes[nodeId].hiddenLabel === undefined) {
+                    allNodes[nodeId].hiddenLabel = allNodes[nodeId].label;
+                    allNodes[nodeId].label = undefined;
+                }
+            }
+            var connectedNodes = network.getConnectedNodes(selectedNode);
+            var allConnectedNodes = [];
+
+            // get the second degree nodes
+            for (i = 1; i < degrees; i++) {
+                for (j = 0; j < connectedNodes.length; j++) {
+                    allConnectedNodes = allConnectedNodes.concat(network.getConnectedNodes(connectedNodes[j]));
+                }
+            }
+
+            // all second degree nodes get a different color and their label back
+            for (i = 0; i < allConnectedNodes.length; i++) {
+                allNodes[allConnectedNodes[i]].color = 'rgba(150,150,150,0.75)';
+                if (allNodes[allConnectedNodes[i]].hiddenLabel !== undefined) {
+                    allNodes[allConnectedNodes[i]].label = allNodes[allConnectedNodes[i]].hiddenLabel;
+                    allNodes[allConnectedNodes[i]].hiddenLabel = undefined;
+                }
+            }
+
+            // all first degree nodes get their own color and their label back
+            for (i = 0; i < connectedNodes.length; i++) {
+                allNodes[connectedNodes[i]].color = undefined;
+                if (allNodes[connectedNodes[i]].hiddenLabel !== undefined) {
+                    allNodes[connectedNodes[i]].label = allNodes[connectedNodes[i]].hiddenLabel;
+                    allNodes[connectedNodes[i]].hiddenLabel = undefined;
+                }
+            }
+
+            // the main node gets its own color and its label back.
+            allNodes[selectedNode].color = undefined;
+            if (allNodes[selectedNode].hiddenLabel !== undefined) {
+                allNodes[selectedNode].label = allNodes[selectedNode].hiddenLabel;
+                allNodes[selectedNode].hiddenLabel = undefined;
+            }
+        }
+        else if (highlightActive === true) {
+            // reset all nodes
+            for (var nodeId in allNodes) {
+                allNodes[nodeId].color = undefined;
+                if (allNodes[nodeId].hiddenLabel !== undefined) {
+                    allNodes[nodeId].label = allNodes[nodeId].hiddenLabel;
+                    allNodes[nodeId].hiddenLabel = undefined;
+                }
+            }
+            highlightActive = false
+        }
+
+        // transform the object into an array
+        var updateArray = [];
+        for (nodeId in allNodes) {
+            if (allNodes.hasOwnProperty(nodeId)) {
+                updateArray.push(allNodes[nodeId]);
+            }
+        }
+        nodesDataset.update(updateArray);
+    }
+
+    redrawAll()
+
+    network.on("doubleClick", function (params) {
+        console.log("Iemand heeft geklikt!")
+        // params.event = "[original event]";
+        var id = params.nodes[0];
+        var node = nodes[id-1];
+        //leerdoel('feestje');
+        //console.log($scope);
+        //console.log(angular.element($("#LeerbomenController")));
+        //console.log(angular.element());
+        // console.log(angular.element());
+        //console.log(document.getElementById('#LeerbomenController'));
+        //console.log($scope.$parent.leerdoel());
+        //console.log($scope);
+        //var test = $scope;
+        // $scope.leerdoel(params);
+        //$scope.$parent.leerdoel()
+        open(params);
+    });
+
+    function open(params) {
+        // var $scope;
+        //console.log($scope);
+        $scope.leerdoel();
+        console.log(params);
+    }
+
+</script>

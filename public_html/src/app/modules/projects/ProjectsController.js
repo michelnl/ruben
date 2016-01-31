@@ -6,7 +6,6 @@ angular.module('app').controller('ProjectsController', function($http, $scope, $
     $scope.newProject = function() {
         $scope.project = new_project;
         openDialog();
-        console.log($scope.project);
     };
 
     $scope.cancel = function() {
@@ -14,7 +13,6 @@ angular.module('app').controller('ProjectsController', function($http, $scope, $
     };
 
     $scope.update = function(project) {
-        console.log(project);
         $mdDialog.cancel();
         updateProject(project);
     }
@@ -29,17 +27,14 @@ angular.module('app').controller('ProjectsController', function($http, $scope, $
     $scope.bewerkProject = function(project) {
         $scope.project = project;
         openDialog();
-        console.log($scope.project);
     };
 
     $scope.verwijderProject = function(project) {
         $scope.project = project;
-        console.log(project);
         openDialogConfirm(project);
     };
 
     $scope.delete = function(project) {
-        console.log(project);
         $mdDialog.cancel();
         deleteProject(project);
     }
